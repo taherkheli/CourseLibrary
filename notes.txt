@@ -1,0 +1,16 @@
+Followed Kevin Dockx's course on pluralsight
+
+Building a RESTful API with ASP.NET Core 3
+https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building
+
+AddControllers() replaces AddMVc() because it only includes what is needed for an API.
+AddMvc() adds a lot more that is needed by a web app but not an API.
+
+In Debug props of the project, 
+- choose 'project' as launch value 
+- uncheck 'launch browser'
+- set port to 51044
+
+F5 or click IISExpress play -> API is launched in terminal
+
+
