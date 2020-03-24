@@ -29,8 +29,21 @@ PM> Add-Migration InitialMigration
 
 Now F5 and local DB does get populated with all the seeding data
 
+************************************************************************************************
+Mod 02 
+************************************************************************************************
+Use nouns and plurals for resources
 
+For API controllers, inherit from ControllerBase and not Controller because the latter includes more than needed (because it is used by webapps as well)
 
+Preferred way for routing in asp.net core 3.1 is Endpoint Routing
+For this we need to configure request pipeline to have
+UseRouting() - routing decision is made
+UseEndpoints()  - selected endpoint for that route is executed
+This gives more flexibility in choosing various endpoints for a resource
+
+Convention based routing is usually used in webapps
+Attribute based routing is used in api'seeding
 
 
 
