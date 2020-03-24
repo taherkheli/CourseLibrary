@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CourseLibrary.API.DbContexts;
 using CourseLibrary.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace CourseLibrary.API
 {
@@ -27,7 +21,14 @@ namespace CourseLibrary.API
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddControllers();
+			services.AddControllers(setupAction =>			
+			{
+				//default is false -> if requested media type cant be provided, return default format -> return json even if XML is sought
+				setupAction.ReturnHttpNotAcceptable = true;
+
+				////not the preferred way as the ordering of the list changes which impacts what is chosen as the default formatter
+				//setupAction.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+			}).AddXmlDataContractSerializerFormatters();    //preferred way now
 
 			services.AddScoped<ICourseLibRepo, CourseLibRepo>();
 
