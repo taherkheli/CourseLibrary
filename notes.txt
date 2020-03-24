@@ -13,4 +13,24 @@ In Debug props of the project,
 
 F5 or click IISExpress play -> API is launched in terminal
 
+Add Nuget pkgs
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+
+Define your entities (repo/data store) and add data annotation attributes for validation and EF migration
+
+After doing all that is needed to implement a repo pattern with EF Core i.e. define entities, implement DbContext, define contract, 
+implement contract using Dbcontext, register service, set up connection string with localdb, deleting and setting up DB each time
+
+We now need to run a migration for it all to work
+
+PM> Add-Migration InitialMigration
+
+Now F5 and local DB does get populated with all the seeding data
+
+
+
+
+
 
