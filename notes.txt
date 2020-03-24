@@ -3,6 +3,10 @@ Followed Kevin Dockx's course on pluralsight
 Building a RESTful API with ASP.NET Core 3
 https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building
 
+************************************************************************************************
+Mod 02 
+************************************************************************************************
+
 AddControllers() replaces AddMVc() because it only includes what is needed for an API.
 AddMvc() adds a lot more that is needed by a web app but not an API.
 
@@ -30,7 +34,7 @@ PM> Add-Migration InitialMigration
 Now F5 and local DB does get populated with all the seeding data
 
 ************************************************************************************************
-Mod 02 
+Mod 03 
 ************************************************************************************************
 Use nouns and plurals for resources
 
@@ -45,5 +49,11 @@ This gives more flexibility in choosing various endpoints for a resource
 Convention based routing is usually used in webapps
 Attribute based routing is used in api'seeding
 
+Output Formatters are used to format the output in some specific format
+a client makes it wish clear by setting the accept header on a Get request e.g. application/json
+Api then returns (outputs) data to the clientin that format if it can
 
+************************************************************************************************
+Mod 04
+************************************************************************************************
 
